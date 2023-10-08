@@ -148,11 +148,11 @@ def main():
     parser = ArgumentParser()
     parser.add_argument('audio', type=str, help='The audio to be sliced')
     parser.add_argument('--out', type=str, help='Output directory of the sliced audio clips')
-    parser.add_argument('--db_thresh', type=float, required=False, default=-40,
+    parser.add_argument('--db_thresh', type=float, required=False, default=-40, # -50 for speech audio
                         help='The dB threshold for silence detection')
-    parser.add_argument('--min_length', type=int, required=False, default=5000,
+    parser.add_argument('--min_length', type=int, required=False, default=5000, # 2000 for speech audio
                         help='The minimum milliseconds required for each sliced audio clip')
-    parser.add_argument('--min_interval', type=int, required=False, default=300,
+    parser.add_argument('--min_interval', type=int, required=False, default=300, # 150 for speech audio
                         help='The minimum milliseconds for a silence part to be sliced')
     parser.add_argument('--hop_size', type=int, required=False, default=10,
                         help='Frame length in milliseconds')
